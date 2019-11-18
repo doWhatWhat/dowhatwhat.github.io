@@ -16,11 +16,13 @@ var container = document.getElementById('container');
 
 window.addEventListener("resize", resize);
 function resize(){
+	slider_blur.style.height = slider_block.clientHeight;
 	slider.style.width = slider.clientWidth - (slider.clientWidth%10);
 	slider.style.height = (slider.clientWidth*9)/20;
 	slider.style.top = (wrapper.clientHeight-slider.clientHeight)/2;
 	what_block.style.height = slider.clientHeight;
 	what_block.style.top = (wrapper.clientHeight-what_block.clientHeight)/2;
+	console.log('re');
 }
 resize();
 
@@ -209,7 +211,7 @@ function autoSlide(){
 		moveLeft();
 	}
 }
-
+//...navig buttons...
 for(let b=0;b<navig_place.length;b++){
 	navig_place[b].onclick = function(){
 		if(b > count){
