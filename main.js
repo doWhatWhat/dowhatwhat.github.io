@@ -16,13 +16,11 @@ var container = document.getElementById('container');
 
 window.addEventListener("resize", resize);
 function resize(){
-	slider_blur.style.height = slider_block.clientHeight;
 	slider.style.width = slider.clientWidth - (slider.clientWidth%10);
 	slider.style.height = (slider.clientWidth*9)/20;
 	slider.style.top = (wrapper.clientHeight-slider.clientHeight)/2;
 	what_block.style.height = slider.clientHeight;
 	what_block.style.top = (wrapper.clientHeight-what_block.clientHeight)/2;
-	console.log('re');
 }
 resize();
 
@@ -37,17 +35,24 @@ window.onscroll = function(){
 	
 	let marg = -window.pageYOffset/4;
 	wrapper.style.marginTop = marg;
+	slider_blur.style.marginTop = window.pageYOffset/1.4;
+	
 	wrapper.style.height = height - window.pageYOffset - marg;
 	
 	if(window.pageYOffset > 1){
 		op = (window.innerHeight/20)/window.pageYOffset;
 		if(op > 0.1){
 			wrapper.style.opacity = op;
+			if(op<=0.5){
+				slider_blur.style.opacity = op;
+			}
 		}else{
 			wrapper.style.opacity = 0;
+			slider_blur.style.opacity = 0;
 		}
 	}else{
 		wrapper.style.opacity = 1;
+		slider_blur.style.opacity = 0.5;
 	}
 	
 	
