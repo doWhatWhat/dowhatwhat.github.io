@@ -147,6 +147,7 @@ function moveLeft(){
 	},1);
 	slider_blur.style.backgroundImage = 'url('+slide_img[count].getAttribute('src')+')';
 }
+
 function moveRight(){
 	for(let b=0;b<navig.length;b++){
 		if(b == count){
@@ -177,7 +178,8 @@ function moveRight(){
 			clearInterval(moveRightInt);
 		}
 	},1);
-	slider_blur.style.backgroundImage = 'url('+slide_img[count].getAttribute('src')+')';
+	slider_blur.style.backgroundImage = 'url("'+slide_img[count].getAttribute('src')+'")';
+	console.log(slide_img[count].getAttribute('src'));
 }
 
 var stop = 0;
