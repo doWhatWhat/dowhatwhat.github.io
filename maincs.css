@@ -1,9 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Arimo|Heebo|Ubuntu&display=swap');
 
+html{
+	width: 100%;
+}
 body{
+	height: 100%;
 	margin: 0;	
-	font-family: Arial;
+	font-family: Arimo, Arial;
 }
 
 #page{
@@ -42,7 +46,6 @@ body{
 #inner_wrap{
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(transparent, #D5B186 150%);
 }
 #what_block{
 	position: relative;
@@ -151,18 +154,26 @@ body{
 	background: #fff;
 }
 
+#wrapper_grad{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: linear-gradient(transparent, #D5B186 110%);
+	z-index: 0;
+}
 
 #slider_blur{
 	position: absolute;
 	width: 100%;
-	height: 75%;
+	height: 100%;
 	top: 0;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	filter: blur(20px) contrast(180%);
 	opacity: 0.5;
 	transition: background 500ms;
-	z-index: 0;
+	z-index: -1;
 }
 
 
@@ -172,7 +183,7 @@ body{
 	width: 100%;
 	height: 100%;
 	top: 70%;
-	background-image: linear-gradient(rgba(213,177,134,.67), #D5B186);
+	background-image: linear-gradient(rgba(213,177,134,.90), #D5B186);
 }
 
 
